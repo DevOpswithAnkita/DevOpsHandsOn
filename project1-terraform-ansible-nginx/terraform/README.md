@@ -12,7 +12,6 @@ This main.tf file demonstrates how to provision AWS infrastructure using Terrafo
 - Create a **Security Group** allowing HTTP (80) and SSH (22) access.
 - Generate an **AWS Key Pair** for SSH access.
 - Launch **1 Master EC2 instance** and **2 Worker EC2 instances**.
-- Deploy **Nginx** and a sample `index.html` using **Ansible**.
 
 ---
 
