@@ -57,7 +57,7 @@ ansible_python_interpreter=/usr/bin/python3
 ```
 
 ---
-#### ping Ansible 
+#### Ping Ansible 
 ```bash
 ansible -i host.ini -all ping 
 ```
@@ -90,12 +90,16 @@ ansible -i host.ini -all ping
         src: index.html
         dest: /var/www/html/index.html
 ```
+### Nginx output
+![ping Ansible](Images/Install-nginx-proof.png)
 
 - `index.html` can contain your content:
 
 ```html
 <h1>Welcome to the world of automation and cloud!</h1>
 ```
+### Webpage 
+![ping Ansible](Images/Deploy-nginx-webserver.png)
 
 ---
 
