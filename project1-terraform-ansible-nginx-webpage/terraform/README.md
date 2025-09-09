@@ -31,12 +31,15 @@ This main.tf file demonstrates how to provision AWS infrastructure using Terrafo
 
 ```bash
    terraform init         # Initialize Terraform
-   ![Terraform ](Images/terraform-apply-output.png)
+![Terraform Apply Output](project1-terraform-ansible-nginx-webpage/terraform/Images/terraform-apply-output.png)
+![Terraform Apply Output](project1-terraform-ansible-nginx-webpage/terraform/Images/Ec2-Instances.png)
+
 ```
 ```bash
 terraform validate     # Validate configuration
 terraform plan         # Show execution plan
 terraform apply        # Apply configuration
 terraform destroy      # Remove infrastructure
+![Terraform destroy Output](project1-terraform-ansible-nginx-webpage/terraform/Images/terraform-destroy-output.png)
 
 
