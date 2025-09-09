@@ -1,0 +1,22 @@
+- 
+ name: Install Nginx server
+ hosts: ec2-users
+ become: yes
+ tasks:
+   - name: Install nginx & start with systemctl
+     apt:
+       name: nginx
+       state: present
+       update_cache: yes
+   - name: Start with systemctl
+     service:
+       state: started
+       name: nginx
+       enabled: yes
+   - name: Deploy webserver
+     copy:
+      src: index.html
+      dest: /var/www/html/index.html
+
+
+

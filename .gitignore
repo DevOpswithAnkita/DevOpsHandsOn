@@ -1,0 +1,6 @@
+commnad
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+.DS_Store
