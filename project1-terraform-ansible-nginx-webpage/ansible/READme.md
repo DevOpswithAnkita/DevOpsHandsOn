@@ -57,6 +57,12 @@ ansible_python_interpreter=/usr/bin/python3
 ```
 
 ---
+#### ping Ansible 
+```bash
+ansible -i host.ini -all ping 
+```
+![ping Ansible](Images/Ping-Ansible.png)
+
 
 ### 4. Ansible Playbook
 
