@@ -98,9 +98,6 @@ ansible -i host.ini -all ping
 ```html
 <h1>Welcome to the world of automation and cloud!</h1>
 ```
-### Webpage 
-![ping Ansible](Images/Deploy-nginx-webserver.png)
-
 ---
 
 ### 5. Run Playbook
@@ -122,6 +119,8 @@ ansible-playbook -i host.ini deploy-nginx.yml
 - SSH access configured using PEM key.
 - Nginx installed and running on all EC2 servers.
 - `index.html` deployed successfully.
+### Webpage 
+![ping Ansible](Images/Deploy-nginx-webserver.png)
 
 ---
 
