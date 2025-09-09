@@ -128,11 +128,11 @@ variable "instance_type" {
   default = "t2.micro"
 }
 #storage variable
-variable "root_volume_size" {
+variable "ebs_size" {
     default = 20
   
 }
-variable "root_volume_type"{
+variable "ebs_type"{
     default = "gp3"
 }
 #create master instnace 
@@ -143,12 +143,19 @@ resource "aws_instance" "Ansible-master" {
     subnet_id = aws_subnet.DevOpswithAnkita-pub-subnet.id
     vpc_security_group_ids =  [aws_security_group.DevOpswithAnkita-sg.id]
     associate_public_ip_address = true
+    user_data = <<-EOF
+      #!/bin/bash
+      sudo apt-get update -y 
+      sudo apt-get install software-property-common
+      sudo add-apt-repository --yes --update ppa:/ansible/ansible
+      sudo apt-get install ansible -y
+      EOF
     tags = {
         Name = "Ansible-master"
     }
     root_block_device {
-      volume_size = var.root_volume_size
-      volume_type = var.root_volume_type
+      volume_size = var.ebs_size
+      volume_type = var.ebs_type
     }
   
 }
@@ -161,8 +168,8 @@ resource "aws_instance" "Ansible-user" {
     vpc_security_group_ids = [aws_security_group.DevOpswithAnkita-sg.id]
     key_name = aws_key_pair.DevOpswithAnkita_key.key_name
     root_block_device {
-      volume_size = var.root_volume_size
-      volume_type = var.root_volume_type
+      volume_size = var.ebs_size
+      volume_type = var.ebs_type
     }
     tags = {
       Name = "Ansible-user-${count.index + 1}"
