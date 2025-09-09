@@ -1,0 +1,32 @@
+ist>>cerate python app  andd module 
+2 terrform to create ec2  for giut lab runner and deploye python app
+3 cerate a project on gitab and runner app slect liunx  runner 
+# Download the binary for your system
+sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+
+# Give it permission to execute
+sudo chmod +x /usr/local/bin/gitlab-runner
+
+# Create a GitLab Runner user
+sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+
+# Install and run as a service
+sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+sudo gitlab-runner start
+oot@ip-172-31-58-234:/home/ubuntu# gitlab-runner register  --url https://gitlab.com  --token glrt-y_QbsOtxPDMhqG6ovnQ73W86MQpwOjE4OGFzdQp0OjMKdTpoeWY4Yhg.01.1j1ygipv6
+Runtime platform                                    arch=amd64 os=linux pid=3955 revision=5a021a1c version=18.3.1
+Running in system-mode.                            
+                                                   
+Enter the GitLab instance URL (for example, https://gitlab.com/):
+[https://gitlab.com]: 
+Verifying runner... is valid                        correlation_id=4b1174fa5c4449328631b226e768ed5b runner=y_QbsOtxP
+Enter a name for the runner. This is stored only in the local config.toml file:
+[ip-172-31-58-234]: gitlabrunner-Ankita              
+Enter an executor: parallels, virtualbox, docker, docker+machine, docker-autoscaler, custom, shell, ssh, docker-windows, kubernetes, instance:
+shell
+Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
+ 
+Configuration (with the authentication token) was saved in "/etc/gitlab-runner/config.toml" 
+root@ip-172-31-58-234:/home/ubuntu# 
+
+

@@ -1,0 +1,28 @@
+# Use Ubuntu as base image
+FROM ubuntu:22.04
+
+# Set environment variables to avoid interactive installs
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Python and pip
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements if you have (optional)
+COPY requirements.txt /app/
+
+# Install dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Copy Flask app
+COPY app.py /app/
+
+# Expose port
+EXPOSE 8000
+
+# Run Flask app
+CMD ["python3", "app.py"]
