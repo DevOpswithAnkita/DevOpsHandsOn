@@ -37,9 +37,9 @@ This main.tf file demonstrates how to provision AWS infrastructure using Terrafo
    terraform destroy      # Remove infrastructure
 ```
 ## Terraform Apply Output
-![Terraform Apply Output](project1-terraform-ansible-nginx-webpage/terraform/Images/terraform-apply-output.png)
+![Terraform Apply Output](Images/terraform-apply-output.png)
 ## Terraform destroy Output
-![Terraform destroy Output](project1-terraform-ansible-nginx-webpage/terraform/Images/terraform-destroy-output.png)
+![Terraform destroy Output](Images/terraform-destroy-output.png)
 ## ec2 Instances 
-![Terraform Apply Output](project1-terraform-ansible-nginx-webpage/terraform/Images/Ec2-Instances.png)
+![Terraform Apply Output](Images/Ec2-Instances.png)
  
